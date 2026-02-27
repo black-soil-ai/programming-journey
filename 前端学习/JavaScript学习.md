@@ -91,4 +91,11 @@ for(let k in a){
   - innertext将文本内容添加到标签位置
   - innerHTML将文本内容添加到标签位置同时可以解析网页标签（如加粗<strong><strong/>）
 - 事件监听（绑定）
-  - 
+```bash
+const object=document.querySelect('CSS选择器')
+objext.addEleventLIstener('click',function(){alert('这是一个弹窗！')})
+```
+- 事件类型<br>
+  <img src="事件类型.png" title='监听事件类型' width=300px height=auto><br>
+- 事件对象（相当于事件触发之后，浏览器塞给你的一个对象'信息包'）
+  - type(触发的事件类型) clientX/Y(鼠标距离浏览器左上角的坐标) offsetX/Y(相对事件标签)`object.addEvenListener('keydown',function(e){console.log(e.key)})`
