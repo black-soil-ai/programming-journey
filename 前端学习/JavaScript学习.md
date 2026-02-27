@@ -25,3 +25,4 @@
     | :---: | :---: | :---: | :---: |
     | array.push() | delete array[] | array.splice(start,num,itme) | console.log(array[]) (也可以直接查看整个数组) |
 ---
+### 判断，循环，函数
