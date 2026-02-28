@@ -92,10 +92,64 @@ for(let k in a){
   - innerHTML将文本内容添加到标签位置同时可以解析网页标签（如加粗<strong><strong/>）
 - 事件监听（绑定）
 ```bash
-const object=document.querySelect('CSS选择器')
+const object=document.querySelector('CSS选择器')
 objext.addEleventLIstener('click',function(){alert('这是一个弹窗！')})
 ```
 - 事件类型<br>
   <img src="事件类型.png" title='监听事件类型' width=300px height=auto><br>
 - 事件对象（相当于事件触发之后，浏览器塞给你的一个对象'信息包'）
   - type(触发的事件类型) clientX/Y(鼠标距离浏览器左上角的坐标) offsetX/Y(相对事件标签)`object.addEvenListener('keydown',function(e){console.log(e.key)})`
+### 3.DOM操作的补充
+- math（）方法
+  - Math.random() 产生0-1的随机数包含0但不包含1
+  - Math.floor() 向下取整
+- 定时器
+  - 间歇定时器 `let var=setinterval(fn,interval[单位是毫秒])` `clearinterval(var)`
+  - 延迟定时器 `let var=settimeout(fn,delay)` `cleartimeout(var)`
+- 操作元素属性
+  - 操作一般属性 var.src='链接'（一般属性常用的有href/src/title）可以通过改变src改变图片
+  - 操作元素样式 var.style.width="30px"注意：如果属性有-连接符，需要转换为小驼峰命名法
+- class属性
+  - 元素.className="css选择器" 新值直接会覆盖旧值
+  - 元素.classList.add("类名")
+  - 元素.classList.remove("类名")
+  - 元素.classList.toggle("类名")
+- 添加与删除DOM
+  - 创建和插入 let object=document.createElement("div)
+    - 追加到父元素的末尾 `父级元素.appendChild('object')`
+    - 插入到指定的位置
+  ```bash
+     let parentNode=document.querySelector("获取父级元素")
+     let childNode=document.querySelector("父级元素中的一个子级元素")
+     let newItem=document.createElement("span")
+     newItem.textContent='插入的内容'
+     parentNode.InsertBefore(newItem,chileNode)
+  ```
+  - 删除DOM
+    - 元素.remove()
+    - 删除整个父元素 元素.parentNode.remove()
+### 4.本地储存
+- 数据只能以字符串的形式储存、来保存不频繁更改的数据、避免储存敏感信息
+- 持久性/不同域名下不能共享访问
+- 建立储存信息  localstorage.setItem('key','value')
+- 获取储存的信息 const username=localstorage.getItem('username')
+- 删除储存信息 localstorage.remove('username')
+- 清空储存 localstorage.clear()
+- 遍历储存的数据
+```bash
+for(let i=0;i<=localstorage.length;i++){
+let key=localstorage.key(i)
+let value=localstorage.getItem(key)
+console.log('${key}:${value}')
+}
+```
+- 注意！如果储存数组或者对象等复杂数据类型，需要先转化为JSON形式
+```bash
+let object={吉祥:23，如意:12}
+localstorage.setItem('key',JSON.stringify(object))
+const data=JSON.parse(localstorage.getItem('key'))
+```
+ - 案例1、现在实现一个功能给网页设计白天黑夜白和浅两种模式，修改后并且保存下次登录网页还是会保存这个设置。
+ - 案例2、保存用户的购物车数据
+---
+## 四、网络请求和BOM（浏览器对象模型）操作
