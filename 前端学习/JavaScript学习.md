@@ -153,3 +153,15 @@ const data=JSON.parse(localstorage.getItem('key'))
  - 案例2、保存用户的购物车数据
 ---
 ## 四、网络请求和BOM（浏览器对象模型）操作
+- BOM模型
+  - 获取窗口大小`console.log(windows.innerWidth/windows.innerHeight/windows.outerWidth/wondows.outerHeight)`
+  - 滚动操作 `windows.scrollTO(x,y)`
+  - 获取滚动位置 `console.log(windows.scrollX/windows.scrollY)`
+  - 页面 windows.onload(function(){console.log('加载完毕！')})
+  - 返回元素的大小及其与浏览器边界位置 元素.getBoundingCliendRect()
+- 监听事件补充
+  - 窗口大小变化（隐藏目录栏）resize
+  - 鼠标的移动、移入和移出 mousemove mouseenter mouseleave
+  - 页面滚动 scroll
+- 网络请求
+  - 
