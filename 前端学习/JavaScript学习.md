@@ -191,6 +191,48 @@ const data=JSON.parse(localstorage.getItem('key'))
         }).catch(error =>{}) //当出现错误时运行（那个方式都可以）
       ```
 - 接口文档
-   - 1. 接口文档：描述接口的文章（一般是后端工程 师，编写和提供）
+   - 1. 接口文档：描述接口的文章（一般是后端工程师编写和提供）
      2. 接口：指的使用 AJAX 和 服务器通讯时，使用的 URL，请求方法，以及参数
+---
+## 五、jQuery(快速轻量级的JavaScript库)
+- 官方网站[https://jquery.com]
+- 在html中引用`<script src="路径"><script/>`
+1. jQuery的基本结构
+  - $(selector).action()
+  - 入口函数$(function(){console.log('DOM加载完毕！')})
+2. jQuery的核心功能
+  - id选择器`$('#id')`类选择器`$('.class')`标签`$('div,span,.class')`
+  - DOM操作
+    - `$('#example').text('修改文本的内容')`
+    - `$('#example').html('<s>修改文本<s/>')`
+    - `$('#inputfiled').val('修改的值')`
+    - `$('#example').append('加在末尾')`
+    - `$('#example').prepend("加在前端")`
+    - 移除元素`$('#example').remove()`
+    - 清空元素内容`$('#example').emtpy()`
+  - CSS操作
+    - 添加移除类`$('#example').addClass/removeClass/toggleClass('类')`
+    - 修改样式`$('#example').css("color","red")`
+    - 修改多个样式
+    ```bash
+      $('#example').css({
+        color:'red',
+        fontSize:'16px'
+      })
+    ```
+   - 事件处理
+     - 点击事件`$('#example').click(function(){alert('你点击了一次！')})`
+     - 底层绑定逻辑，可以一次绑定多个事件`$('#example').on('click',function(){})`
+   - 动画效果
+     - 隐藏和显示`$('#example').hide/show/toggle(1000)`
+     - 淡入和淡出`$('#example').fadeIn/fadeOut/fadeToggle(1000)`
+     - 滑动效果`$('#example').slideDown/slideUp/slideToggle(1000)`向下展开/向上展开（用时1秒）
+- ai大模型
+
+| 对比项 | deepseek | 豆包 | 通义千问 |
+| --- | --- | --- | --- |
+| 特点   | 逻辑推理  | 媒体创意生成 | 行业多轮对话 |
+| 事例   | 擅长生成或修复python、javascript脚本等代码  | 一键生成小红书文案、短视频脚本、广告标语，风格活泼接地气 | 擅长客服问答，文案脚本 |
+
+
 
