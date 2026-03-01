@@ -164,4 +164,33 @@ const data=JSON.parse(localstorage.getItem('key'))
   - 鼠标的移动、移入和移出 mousemove mouseenter mouseleave
   - 页面滚动 scroll
 - 网络请求
-  - 
+  - 什么是服务器？可以短暂理解为提供数据的电脑
+  - 什么是AJAX？AJAX是一种前端技术，能让网页在不刷新整个页面的情况下，和服务器交换数据，更新局部内容。
+  - 什么是axios库？axios是一个基于promise的HTTP的客户端，专门用来在浏览器和Node.js环境发送AJAX请求，是AJAX的封装和加强
+  - 引入axios库和使用axios
+  ```bash
+    axios({
+      url:'目标地址资源'，
+    }).then((result)=>{})
+  ```
+  - get和post请求
+    - get向服务器发送请求
+      ```bash
+          axios({
+            url:'地址'，
+            method:'get'，
+            params:{useId:2}，//只获取useId为2的数据
+          }).then((var)=>{})
+      ```
+    - post向服务器提交数据
+      ```bash
+        axios({
+          url:'地址',
+          method:'post',
+          data:{usr:'吉祥',age:'18',gender:'男'},
+        }).catch(error =>{}) //当出现错误时运行（那个方式都可以）
+      ```
+- 接口文档
+   - 1. 接口文档：描述接口的文章（一般是后端工程 师，编写和提供）
+     2. 接口：指的使用 AJAX 和 服务器通讯时，使用的 URL，请求方法，以及参数
+
