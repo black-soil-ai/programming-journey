@@ -93,3 +93,10 @@ conn.close()
   - 丰富的第三方库（如 django-allauth 处理社交登录）
 #### 5.项目设计模式
 - MVC设计模式（分工、负责分离）
+ - modal模型（完成数据库的交互）
+ - view视图（形成html）
+ - control(接受、返回请求 与M、V交互)
+- MVT设计模式
+  - model模型（数据库交互）
+  - view视图（接受、返回请求）
+  - template（相当于mvc的view）
